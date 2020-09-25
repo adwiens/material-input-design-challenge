@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Lato";
+  // IE9 Compat Modes:
+  src: url("../fonts/Lato/Lato-Regular.eot");
+  src:
+    // IE6-IE8:
+    url("../fonts/Lato/Lato-Regular.eot?#iefix") format("embedded-opentype"),
+    // Super Modern Browsers:
+    url("../fonts/Lato/Lato-Regular.woff2") format("woff2"),
+    // Pretty Modern Browsers:
+    url("../fonts/Lato/Lato-Regular.woff") format("woff"),
+    // Safari, Android, iOS:
+    url("../fonts/Lato/Lato-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Lato";
+  // IE9 Compat Modes:
+  src: url("../fonts/Lato/Lato-Medium.eot");
+  src:
+    // IE6-IE8:
+    url("../fonts/Lato/Lato-Medium.eot?#iefix") format("embedded-opentype"),
+    // Super Modern Browsers:
+    url("../fonts/Lato/Lato-Medium.woff2") format("woff2"),
+    // Pretty Modern Browsers:
+    url("../fonts/Lato/Lato-Medium.woff") format("woff"),
+    // Safari, Android, iOS:
+    url("../fonts/Lato/Lato-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Lato";
+  // IE9 Compat Modes:
+  src: url("../fonts/Lato/Lato-Bold.eot");
+  src:
+    // IE6-IE8:
+    url("../fonts/Lato/Lato-Bold.eot?#iefix") format("embedded-opentype"),
+    // Super Modern Browsers:
+    url("../fonts/Lato/Lato-Bold.woff2") format("woff2"),
+    // Pretty Modern Browsers:
+    url("../fonts/Lato/Lato-Bold.woff") format("woff"),
+    // Safari, Android, iOS:
+    url("../fonts/Lato/Lato-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
