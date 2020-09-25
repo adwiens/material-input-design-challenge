@@ -39,8 +39,9 @@ export class FormFieldDirective implements DoCheck, OnDestroy {
   private unsubscribe = new Subject();
 
   constructor(private host: MatFormField) {
-    // Set mat-form-field to always have the outline appearance:
+    // Always have outline and floating label:
     host.appearance = 'outline';
+    host.floatLabel = 'always';
   }
 
   ngDoCheck(): void {
