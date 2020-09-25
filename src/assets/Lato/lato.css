@@ -1,0 +1,64 @@
+/* Using font files because Google Lato doesn't have some font weights: */
+@font-face {
+  font-family: "Lato";
+  /* IE9 Compat Modes: */
+  src: url("Lato-Regular.eot");
+  src:
+    /* IE6-IE8: */
+    url("Lato-Regular.eot?#iefix") format("embedded-opentype"),
+    /* Super Modern Browsers: */
+    url("Lato-Regular.woff2") format("woff2"),
+    /* Pretty Modern Browsers: */
+    url("Lato-Regular.woff") format("woff"),
+    /* Safari, Android, iOS: */
+    url("Lato-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Lato";
+  /* IE9 Compat Modes: */
+  src: url("Lato-Medium.eot");
+  src:
+    /* IE6-IE8: */
+    url("Lato-Medium.eot?#iefix") format("embedded-opentype"),
+    /* Super Modern Browsers: */
+    url("Lato-Medium.woff2") format("woff2"),
+    /* Pretty Modern Browsers: */
+    url("Lato-Medium.woff") format("woff"),
+    /* Safari, Android, iOS: */
+    url("Lato-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Lato";
+  /* IE9 Compat Modes: */
+  src: url("Lato-Semibold.eot");
+  src:
+    /* IE6-IE8: */
+    url("Lato-Semibold.eot?#iefix") format("embedded-opentype"),
+    /* Super Modern Browsers: */
+    url("Lato-Semibold.woff2") format("woff2"),
+    /* Pretty Modern Browsers: */
+    url("Lato-Semibold.woff") format("woff"),
+    /* Safari, Android, iOS: */
+    url("Lato-Semibold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Lato";
+  /* IE9 Compat Modes: */
+  src: url("Lato-Bold.eot");
+  src:
+    /* IE6-IE8: */
+    url("Lato-Bold.eot?#iefix") format("embedded-opentype"),
+    /* Super Modern Browsers: */
+    url("Lato-Bold.woff2") format("woff2"),
+    /* Pretty Modern Browsers: */
+    url("Lato-Bold.woff") format("woff"),
+    /* Safari, Android, iOS: */
+    url("Lato-Bold.ttf") format("truetype");
+  font-weight: 700;
+}

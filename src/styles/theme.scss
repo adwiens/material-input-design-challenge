@@ -3,6 +3,13 @@ $outline-color-opacity: 0.47;
 $outline-color: rgba(black, $outline-color-opacity);
 $hover-color: rgba(black, 0.06);
 
+$typography: mat-typography-config(
+  $font-family: "Lato, sans-serif",
+  $input: mat-typography-level(16px, 1.125, 400)
+);
+
+@include mat-core($typography);
+
 // I used a color-picker on the provided screenshot to get one main color value, and then
 // generated the palettes with this tool (http://mcg.mbitson.com/). Replaced hard-coded
 // contrasts with "$xxx-primary-text".
