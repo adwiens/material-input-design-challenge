@@ -8,6 +8,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class AppComponent {
   errorControl = new FormControl('Input Text', Validators.minLength(11));
+  active = false;
 
   constructor() {
     this.errorControl.markAsTouched(); // Show error state

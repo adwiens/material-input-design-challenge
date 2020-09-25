@@ -1,5 +1,14 @@
 <!-- Normal Angular Material code: -->
-<!-- Regular input: -->
+<!-- Inactive input: -->
+<mat-form-field>
+  <mat-label *ngIf="active">Label Text</mat-label>
+  <mat-icon matPrefix>event</mat-icon>
+  <input matInput value="Input Text">
+  <mat-icon matSuffix>visibility</mat-icon>
+  <mat-hint>Hint text</mat-hint>
+</mat-form-field>
+
+<!-- Active input: -->
 <mat-form-field>
   <mat-label>Label Text</mat-label>
   <mat-icon matPrefix>event</mat-icon>
