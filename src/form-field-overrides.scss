@@ -25,10 +25,25 @@ $mat-form-field-outline-border-radius: 8px;
 $mat-form-field-outline-thick-width: 1px;
 
 // The horizontal padding between the edge of the subscript box and the start of the subscript text.
-$mat-form-field-outline-subscript-padding: $mat-form-field-outline-side-padding /
-  $mat-form-field-outline-subscript-font-scale;
+$mat-form-field-outline-subscript-padding: 8px;
 
+// Add "mat-form-field." to have higher specificity than the defaults:
 mat-form-field.mat-form-field-appearance-outline {
+  .mat-error,
+  .mat-hint,
+  .mat-input-element {
+    font-weight: 400;
+  }
+
+  .mat-form-field-infix {
+    padding-top: 10px;
+    width: 232px;
+  }
+
+  .mat-form-field-flex {
+    height: 50px;
+  }
+
   .mat-form-field-outline-thick,
   .mat-form-field-outline {
     color: $outline-color;
@@ -145,7 +160,7 @@ mat-form-field.mat-form-field-appearance-outline {
   //   }
 
   .mat-form-field-outline-thick {
-    //     opacity: 0;
+    // opacity: 0;
 
     .mat-form-field-outline-start,
     .mat-form-field-outline-end,
@@ -154,27 +169,27 @@ mat-form-field.mat-form-field-appearance-outline {
     }
   }
 
-  &.mat-focused,
-  &.mat-form-field-invalid {
-    .mat-form-field-outline {
-      //       opacity: 0;
-      transition: none;
-    }
-    .mat-form-field-outline-thick {
-      opacity: 1;
-    }
-  }
+  // &.mat-focused,
+  // &.mat-form-field-invalid {
+  //   .mat-form-field-outline {
+  //     opacity: 0;
+  //     transition: opacity 100ms $swift-ease-out-timing-function;
+  //   }
+  //   .mat-form-field-outline-thick {
+  //     opacity: 1;
+  //   }
+  // }
 
-  &:not(.mat-form-field-disabled) .mat-form-field-flex:hover {
-    & .mat-form-field-outline {
-      opacity: 0;
-      transition: none;
-    }
+  // &:not(.mat-form-field-disabled) .mat-form-field-flex:hover {
+  //   & .mat-form-field-outline {
+  //     opacity: 0;
+  //     transition: opacity 600ms $swift-ease-out-timing-function;
+  //   }
 
-    & .mat-form-field-outline-thick {
-      opacity: 1;
-    }
-  }
+  //   & .mat-form-field-outline-thick {
+  //     opacity: 1;
+  //   }
+  // }
 
   .mat-form-field-subscript-wrapper {
     padding: 0 $mat-form-field-outline-subscript-padding;
