@@ -49,8 +49,15 @@ mat-form-field.mat-form-field-appearance-outline.mat-form-field-should-float {
     // undo it here to set the actual font size:
     font-size: $label-small-font-size / 0.75;
     font-weight: $label-small-font-weight;
-    left: 0 - $mat-icon-size - $label-whitespace-x;
+    left: 0 - $mat-icon-size;
     top: 28px;
+    mat-label {
+      span {
+        // Shrink label whitespace to desired # pixels:
+        margin-left: $label-whitespace-x - 5px; // 5px is Material's value
+        margin-right: $label-whitespace-x - 5px - 1px; // Remove extra pixel(s)
+      }
+    }
   }
 }
 
