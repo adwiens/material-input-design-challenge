@@ -1,18 +1,8 @@
-$outline-color-opacity: 0.47;
-$outline-color: rgba(black, $outline-color-opacity);
-$hover-color: rgba(black, 0.06);
-
 // The horizontal padding between the edge of the form field fill box and the start of the text.
 $mat-form-field-outline-side-padding: 16px;
 
-// // The amount of overlap between the label and the outline.
-// $mat-form-field-outline-label-overlap: 0.25em;
-
 // The border radius of the outline.
 $mat-form-field-outline-border-radius: 8px;
-
-// // The width of the outline.
-// $mat-form-field-outline-width: 1px;
 
 // The width of the thick outline (used for focus, hover, and error state).
 $mat-form-field-outline-thick-width: 1px;
@@ -86,7 +76,7 @@ mat-form-field.mat-form-field-appearance-outline {
 
   .mat-form-field-prefix,
   .mat-form-field-suffix {
-    // Size and position prefix & suffix icons:
+    // Size and position the prefix & suffix icons:
     top: -3px;
     font-size: $mat-icon-size;
     line-height: $mat-icon-size;
@@ -115,120 +105,41 @@ mat-form-field.mat-form-field-appearance-outline {
     border-radius: $mat-form-field-outline-border-radius;
   }
 
-  // &.mat-focused {
-  //   .mat-form-field-outline-thick {
-  //     color: $outline-color-primary;
-  //   }
-
-  //   &.mat-accent .mat-form-field-outline-thick {
-  //     color: $outline-color-accent;
-  //   }
-
-  //   &.mat-warn .mat-form-field-outline-thick {
-  //     color: $outline-color-warn;
-  //   }
-  // }
-
-  // // Class repeated so that rule is specific enough to override focused accent color case.
-  // &.mat-form-field-invalid.mat-form-field-invalid {
-  //   .mat-form-field-outline-thick {
-  //     color: $outline-color-warn;
-  //   }
-  // }
-
-  // &.mat-form-field-disabled {
-  //   .mat-form-field-label {
-  //     color: $label-disabled-color;
-  //   }
-
-  //   .mat-form-field-outline {
-  //     color: $outline-color-disabled;
-  //   }
-  // }
-
-  //   // We need to add margin to the top to reserve space in the layout for the label which sticks out
-  //   // of the top. In order to ensure that the outline appearance aligns nicely with other form-field
-  //   // appearances when center-aligned, we also need to add the same amount of margin to the bottom.
-    .mat-form-field-wrapper {
-  //     margin: $mat-form-field-outline-label-overlap 0;
-      margin-bottom: 0;
-    }
+  .mat-form-field-wrapper {
+    margin-bottom: 0;
+  }
 
   .mat-form-field-flex {
     padding: 0 $mat-form-field-outline-side-padding 0
       $mat-form-field-outline-side-padding;
-    // margin-top: -$mat-form-field-outline-label-overlap;
-    // position: relative;
   }
-
-  //   .mat-form-field-prefix,
-  //   .mat-form-field-suffix {
-  //     top: $mat-form-field-outline-label-overlap;
-  //   }
-
-  //   .mat-form-field-outline {
-  //     display: flex;
-  //     position: absolute;
-  //     top: $mat-form-field-outline-label-overlap;
-  //     left: 0;
-  //     right: 0;
-  //     bottom: 0;
-  //     pointer-events: none;
-  //   }
 
   .mat-form-field-outline-start,
   .mat-form-field-outline-end {
-    //     border: $mat-form-field-outline-width solid currentColor;
     min-width: $mat-form-field-outline-border-radius;
   }
 
   .mat-form-field-outline-start {
     border-radius: $mat-form-field-outline-border-radius 0 0
       $mat-form-field-outline-border-radius;
-    //     border-right-style: none;
 
     [dir="rtl"] & {
-      //       border-right-style: solid;
-      //       border-left-style: none;
       border-radius: 0 $mat-form-field-outline-border-radius
         $mat-form-field-outline-border-radius;
-      //                      0;
     }
   }
 
   .mat-form-field-outline-end {
     border-radius: 0 $mat-form-field-outline-border-radius
       $mat-form-field-outline-border-radius 0;
-    //     border-left-style: none;
-    //     flex-grow: 1;
 
     [dir="rtl"] & {
-      //       border-left-style: solid;
-      //       border-right-style: none;
       border-radius: $mat-form-field-outline-border-radius 0 0
         $mat-form-field-outline-border-radius;
     }
   }
 
-  //   .mat-form-field-outline-gap {
-  //     // Workaround for Chrome's treatment of borders with non-integer (scaled) widths
-  //     // refer to https://github.com/angular/components/issues/10710
-  //     border-radius: 0.000001px;
-
-  //     border: $mat-form-field-outline-width solid currentColor;
-  //     border-left-style: none;
-  //     border-right-style: none;
-  //   }
-
-  //   &.mat-form-field-can-float.mat-form-field-should-float {
-  //     .mat-form-field-outline-gap {
-  //       border-top-color: transparent;
-  //     }
-  //   }
-
   .mat-form-field-outline-thick {
-    // opacity: 0;
-
     .mat-form-field-outline-start,
     .mat-form-field-outline-end,
     .mat-form-field-outline-gap {
@@ -236,41 +147,8 @@ mat-form-field.mat-form-field-appearance-outline {
     }
   }
 
-  // &.mat-focused,
-  // &.mat-form-field-invalid {
-  //   .mat-form-field-outline {
-  //     opacity: 0;
-  //     transition: opacity 100ms $swift-ease-out-timing-function;
-  //   }
-  //   .mat-form-field-outline-thick {
-  //     opacity: 1;
-  //   }
-  // }
-
-  // &:not(.mat-form-field-disabled) .mat-form-field-flex:hover {
-  //   & .mat-form-field-outline {
-  //     opacity: 0;
-  //     transition: opacity 600ms $swift-ease-out-timing-function;
-  //   }
-
-  //   & .mat-form-field-outline-thick {
-  //     opacity: 1;
-  //   }
-  // }
-
   .mat-form-field-subscript-wrapper {
     padding: 0 $hint-left-padding;
     margin-top: 5px;
   }
-
-  //   &._mat-animation-noopable {
-  //     &:not(.mat-form-field-disabled) .mat-form-field-flex:hover ~ .mat-form-field-outline,
-  //     .mat-form-field-outline,
-  //     .mat-form-field-outline-start,
-  //     .mat-form-field-outline-end,
-  //     .mat-form-field-outline-gap {
-  //       transition: none;
-  //     }
-  //   }
-  // }
 }

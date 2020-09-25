@@ -1,6 +1,5 @@
-import { Component, QueryList, ViewChildren } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { MatFormField } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +7,7 @@ import { MatFormField } from '@angular/material/form-field';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  @ViewChildren(MatFormField) formFields: QueryList<MatFormField>;
-  errorControl = new FormControl('Input Text', Validators.minLength(15));
+  errorControl = new FormControl('Input Text', Validators.minLength(11));
 
   constructor() {
     this.errorControl.markAsTouched(); // Show error state

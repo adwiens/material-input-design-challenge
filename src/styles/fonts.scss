@@ -1,5 +1,4 @@
 // Using font files because Google Lato doesn't have some font weights:
-
 @font-face {
   font-family: "Lato";
   // IE9 Compat Modes:
@@ -63,3 +62,10 @@
     url("../fonts/Lato/Lato-Bold.ttf") format("truetype");
   font-weight: 700;
 }
+
+$typography: mat-typography-config(
+  $font-family: "Lato, sans-serif",
+  $input: mat-typography-level(16px, 1.125, 400)
+);
+
+@include mat-core($typography);
