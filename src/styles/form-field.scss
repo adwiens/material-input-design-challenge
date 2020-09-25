@@ -5,6 +5,7 @@
 
 $outline-color-opacity: 0.47;
 $outline-color: rgba(black, $outline-color-opacity);
+$hover-color: rgba(black, 0.06);
 
 // The horizontal padding between the edge of the form field fill box and the start of the text.
 $mat-form-field-outline-side-padding: 16px;
@@ -24,26 +25,84 @@ $mat-form-field-outline-thick-width: 1px;
 // The horizontal padding between the edge of the subscript box and the start of the subscript text.
 $mat-form-field-outline-subscript-padding: 8px;
 
+// Design challenge values:
+$mat-icon-size: 20px;
+$mat-icon-input-padding: 8px;
+$form-field-width: 232px;
+$label-large-font-weight: 500;
+$label-small-font-weight: 700;
+$label-large-font-size: 14px;
+$label-small-font-size: 12px;
+$hint-left-padding: 8px;
+
 // Add "mat-form-field." to have higher specificity than the defaults:
+mat-form-field.mat-form-field-appearance-outline.mat-form-field-hide-placeholder {
+  label {
+    top: 21px;
+  }
+}
+
+mat-form-field.mat-form-field-appearance-outline.mat-form-field-should-float {
+  label.mat-form-field-label {
+    // Material lib multiplies the floating label's font-size by 0.75, so
+    // undo it here to set the actual font size:
+    font-size: $label-small-font-size / 0.75;
+    font-weight: $label-small-font-weight;
+  }
+}
+
 mat-form-field.mat-form-field-appearance-outline {
+  width: $form-field-width;
+
+  .mat-form-field-flex:hover {
+    .mat-form-field-outline {
+      background-color: $hover-color;
+    }
+  }
+
+  label.mat-form-field-label {
+    padding-left: $mat-icon-input-padding;
+    font-size: $label-large-font-size;
+    font-weight: $label-large-font-weight;
+    transition-property: all;
+  }
+
+  input {
+    position: relative;
+    top: -8px;
+    font-weight: $label-large-font-weight;
+    font-size: $label-large-font-size;
+  }
+
+  .mat-form-field-prefix,
+  .mat-form-field-suffix {
+    // Size and position prefix & suffix icons:
+    top: -3px;
+    font-size: $mat-icon-size;
+    line-height: $mat-icon-size;
+    height: $mat-icon-size;
+  }
+
   .mat-error,
-  .mat-hint,
-  .mat-input-element {
-    font-weight: 400;
+  .mat-hint {
+    font-weight: $label-small-font-weight;
+    font-size: $label-small-font-size;
   }
 
   .mat-form-field-infix {
     padding-top: 10px;
-    width: 232px;
+    padding-left: $mat-icon-input-padding;
+    padding-right: $mat-icon-input-padding;
   }
 
   .mat-form-field-flex {
-    height: 50px;
+    height: 44px;
   }
 
   .mat-form-field-outline-thick,
   .mat-form-field-outline {
     color: $outline-color;
+    border-radius: $mat-form-field-outline-border-radius;
   }
 
   // &.mat-focused {
@@ -189,7 +248,7 @@ mat-form-field.mat-form-field-appearance-outline {
   // }
 
   .mat-form-field-subscript-wrapper {
-    padding: 0 $mat-form-field-outline-subscript-padding;
+    padding: 0 $hint-left-padding;
   }
 
   //   &._mat-animation-noopable {

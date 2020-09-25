@@ -21,6 +21,7 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     // Fix for Material bug where label whitespace (the "outline gap")
     // remains the width of the native (non-Lato) font:
+    // TODO: This does not quite work correctly when input starts out empty
     this.formFields.forEach(field => setTimeout(() => field.updateOutlineGap(), 500));
   }
 }

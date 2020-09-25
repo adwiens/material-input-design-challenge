@@ -1,27 +1,28 @@
 <!-- Inactive input: -->
 <mat-form-field appearance="outline">
   <mat-label>Label Text</mat-label>
-  <mat-icon matPrefix>event</mat-icon>
-  <input matInput value="Input Text">
-  <mat-icon matSuffix>visibility</mat-icon>
+  <mat-icon matPrefix [inline]="true">event</mat-icon>
+  <input matInput value="asfd">
+  <mat-icon matSuffix [inline]="true">visibility</mat-icon>
   <mat-hint>Hint text</mat-hint>
 </mat-form-field>
 
 <!-- Active input: -->
 <mat-form-field appearance="outline">
   <mat-label>Label Text</mat-label>
-  <mat-icon matPrefix>event</mat-icon>
+  <!-- TODO: Replace [inline] with a more automatic way, e.g. a directive whose selector is mat-icon: -->
+  <mat-icon matPrefix [inline]="true">event</mat-icon>
   <input matInput #activeInput value="Input Text">
-  <mat-icon matSuffix>visibility</mat-icon>
+  <mat-icon matSuffix [inline]="true">visibility</mat-icon>
   <mat-hint>Hint text</mat-hint>
 </mat-form-field>
 
 <!-- Error input: -->
 <mat-form-field appearance="outline">
   <mat-label>Label Text</mat-label>
-  <mat-icon matPrefix>event</mat-icon>
+  <mat-icon matPrefix [inline]="true">event</mat-icon>
   <input matInput [formControl]="errorControl">
   <!-- TODO: replace [color] with styles using .ng-invalid .ng-touched: -->
-  <mat-icon matSuffix [color]="errorControl.invalid && 'warn'">error_outline</mat-icon>
+  <mat-icon matSuffix [inline]="true" [color]="errorControl.invalid && 'warn'">error_outline</mat-icon>
   <mat-error>Error text</mat-error>
 </mat-form-field>

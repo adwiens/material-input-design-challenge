@@ -126,7 +126,7 @@ $itn-dc-background: (
   app-bar: map_get($mat-grey, 100),
   background: map_get($mat-grey, 50),
   // Modified:
-  hover: rgba(black, 0.06),
+  hover: $hover-color,
   card: white,
   dialog: white,
   disabled-button: rgba(black, 0.12),
