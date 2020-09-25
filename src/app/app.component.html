@@ -11,16 +11,17 @@
 <mat-form-field appearance="outline">
   <mat-label>Label Text</mat-label>
   <mat-icon matPrefix>event</mat-icon>
-  <input matInput value="Input Text" #activeInput>
+  <input matInput #activeInput value="Input Text">
   <mat-icon matSuffix>visibility</mat-icon>
-  <mat-error>Error text</mat-error>
+  <mat-hint>Hint text</mat-hint>
 </mat-form-field>
 
 <!-- Error input: -->
 <mat-form-field appearance="outline">
   <mat-label>Label Text</mat-label>
   <mat-icon matPrefix>event</mat-icon>
-  <input matInput value="Input Text" [formControl]="errorControl">
+  <input matInput [formControl]="errorControl">
+  <!-- TODO: replace [color] with styles using .ng-invalid .ng-touched: -->
   <mat-icon matSuffix [color]="errorControl.invalid && 'warn'">error_outline</mat-icon>
   <mat-error>Error text</mat-error>
 </mat-form-field>
