@@ -7,9 +7,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LabelComponent } from './label.component';
+import { FormFieldDirective } from './form-field.directive';
+import { SuffixDirective } from './suffix.directive';
 
 @NgModule({
-  declarations: [AppComponent, LabelComponent],
+  declarations: [
+    AppComponent,
+    LabelComponent,
+    FormFieldDirective,
+    SuffixDirective,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
