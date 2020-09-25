@@ -6,9 +6,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { LabelComponent } from './label.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LabelComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

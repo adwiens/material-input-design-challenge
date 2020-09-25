@@ -1,3 +1,5 @@
+// Using font files because Google Lato doesn't have some font weights:
+
 @font-face {
   font-family: "Lato";
   // IE9 Compat Modes:
@@ -28,6 +30,22 @@
     // Safari, Android, iOS:
     url("../fonts/Lato/Lato-Medium.ttf") format("truetype");
   font-weight: 500;
+}
+
+@font-face {
+  font-family: "Lato";
+  // IE9 Compat Modes:
+  src: url("../fonts/Lato/Lato-Semibold.eot");
+  src:
+    // IE6-IE8:
+    url("../fonts/Lato/Lato-Semibold.eot?#iefix") format("embedded-opentype"),
+    // Super Modern Browsers:
+    url("../fonts/Lato/Lato-Semibold.woff2") format("woff2"),
+    // Pretty Modern Browsers:
+    url("../fonts/Lato/Lato-Semibold.woff") format("woff"),
+    // Safari, Android, iOS:
+    url("../fonts/Lato/Lato-Semibold.ttf") format("truetype");
+  font-weight: 600;
 }
 
 @font-face {
