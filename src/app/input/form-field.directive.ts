@@ -4,6 +4,7 @@ import {
   Directive,
   DoCheck,
   OnDestroy,
+  OnInit,
   QueryList,
 } from '@angular/core';
 import { FormControlDirective as FCDirective } from '@angular/forms';
@@ -17,7 +18,7 @@ import { SuffixDirective } from './suffix.directive';
 @Directive({
   selector: 'mat-form-field', // tslint:disable-line:directive-selector
 })
-export class FormFieldDirective implements DoCheck, OnDestroy {
+export class FormFieldDirective implements OnInit, DoCheck, OnDestroy {
   @ContentChild(SuffixDirective) suffix: SuffixDirective;
 
   // Size each icon to 20x20 by setting inline to true:
@@ -36,22 +37,31 @@ export class FormFieldDirective implements DoCheck, OnDestroy {
     }
   }
 
-  private unsubscribe = new Subject();
+  private unsubscribe = new Subject<boolean | void>();
+  private updating?: number;
+  private interval?: number;
 
-  constructor(private host: MatFormField) {
-    // Always have outline and floating label:
-    host.appearance = 'outline';
-    host.floatLabel = 'always';
+  constructor(private host: MatFormField) {}
+
+  ngOnInit(): void {
+    this.host.appearance = 'outline'; // Always have outline appearance
   }
 
   ngDoCheck(): void {
     // Fix Material bug where label whitespace (the "outline gap")
     // remains the width of the native (non-Lato) font:
-    setTimeout(() => this.host.updateOutlineGap(), 500);
+    if (this.updating) {
+      clearTimeout(this.updating);
+    }
+    if (!this.interval) {
+      const updateGap = () => this.host.updateOutlineGap();
+      this.interval = setInterval(updateGap, 20) as any;
+    }
+    this.updating = setTimeout(() => clearInterval(this.interval), 500) as any;
   }
 
   ngOnDestroy(): void {
-    // Clean up any subscriptions:
+    // Clean up subscriptions:
     this.unsubscribe.next();
     this.unsubscribe.complete();
   }

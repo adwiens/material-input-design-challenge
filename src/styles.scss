@@ -1,7 +1,7 @@
 @import "~@angular/material/theming";
 
 @import "./styles/theme.scss";
-@import "./styles/itn-form-field.scss";
+@import "./styles/form-field.scss";
 
 html,
 body {
@@ -9,5 +9,5 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "LatoWeb", monospace;
 }

@@ -12,4 +12,4 @@ const classes = [LabelComponent, FormFieldDirective, SuffixDirective];
   imports: [CommonModule],
   exports: classes,
 })
-export class ItnInputModule {}
+export class InputModule {}

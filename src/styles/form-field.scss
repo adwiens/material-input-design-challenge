@@ -1,46 +1,43 @@
+// Design challenge values:
+$transition-duration: 150ms; // Video had 150ms duration
+$mat-icon-size: 20px;
+$mat-icon-input-padding: 8px;
+$form-field-width: 232px;
+$label-large-font-family: "LatoWebMedium", monospace;
+$label-small-font-family: "LatoWebBold", monospace;
+$label-large-font-size: 14px;
+$label-small-font-size: 12px;
+$hint-left-padding: 8px;
+$label-whitespace-x: 2px;
+
 // The horizontal padding between the edge of the form field fill box and the start of the text.
 $mat-form-field-outline-side-padding: 16px;
 
 // The border radius of the outline.
 $mat-form-field-outline-border-radius: 8px;
 
-// The width of the thick outline (used for focus, hover, and error state).
-$mat-form-field-outline-thick-width: 1px;
-
 // The horizontal padding between the edge of the subscript box and the start of the subscript text.
 $mat-form-field-outline-subscript-padding: 8px;
 
-// Design challenge values:
-$mat-icon-size: 20px;
-$mat-icon-input-padding: 8px;
-$form-field-width: 232px;
-$label-large-font-weight: 500;
-$label-small-font-weight: 700;
-$label-large-font-size: 14px;
-$label-small-font-size: 12px;
-$hint-left-padding: 8px;
-$label-whitespace-x: 2px;
+// Amount that Material multiplies the floating label's font-size by:
+$mat-font-scale: 0.75;
 
 // Add "mat-form-field" to have higher specificity than Material's CSS:
-mat-form-field.mat-form-field-appearance-outline.mat-form-field-hide-placeholder {
+mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-hide-placeholder {
   label {
-    top: 21px;
+    transform: translateY(-6px);
   }
 }
 
-mat-form-field.mat-form-field-appearance-outline.mat-form-field-should-float {
+mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float {
   label.mat-form-field-label {
-    // Material multiplies the floating label's font-size by 0.75, so
-    // undo it here to set the actual font size:
-    font-size: $label-small-font-size / 0.75;
-    font-weight: $label-small-font-weight;
-    left: 0 - $mat-icon-size - $label-whitespace-x;
-    top: 28px;
+    transform: translate(-1px - $mat-icon-size - $label-whitespace-x, -24px) scale($mat-font-scale);
     mat-label {
       span {
         // Shrink label whitespace to desired # pixels:
-        margin-left: $label-whitespace-x - 5px; // 5px is Material's value
-        margin-right: $label-whitespace-x - 5px - 1px; // Remove extra pixel(s)
+        margin-left: $label-whitespace-x - 5px + 2px; // 5px is Material's value
+        margin-right: $label-whitespace-x - 5px - 2px; // Remove extra pixel(s)
+        font-size: 16px;
       }
     }
   }
@@ -60,17 +57,24 @@ mat-form-field.mat-form-field-appearance-outline {
   }
 
   label.mat-form-field-label {
-    padding-left: $mat-icon-input-padding;
     font-size: $label-large-font-size;
-    font-weight: $label-large-font-weight;
-    transition-property: all;
+    padding-left: $mat-icon-input-padding;
+    font-family: $label-large-font-family;
+    transition-duration: $transition-duration;
     overflow: hidden;
+
+    mat-label {
+      span {
+        transition-property: font-size;
+        transition-duration: $transition-duration;
+      }
+    }
   }
 
   input {
     position: relative;
     top: -9px;
-    font-weight: $label-large-font-weight;
+    font-family: $label-large-font-family;
     font-size: $label-large-font-size;
   }
 
@@ -85,7 +89,7 @@ mat-form-field.mat-form-field-appearance-outline {
 
   .mat-error,
   .mat-hint {
-    font-weight: $label-small-font-weight;
+    font-family: $label-small-font-family;
     font-size: $label-small-font-size;
   }
 
@@ -136,14 +140,6 @@ mat-form-field.mat-form-field-appearance-outline {
     [dir="rtl"] & {
       border-radius: $mat-form-field-outline-border-radius 0 0
         $mat-form-field-outline-border-radius;
-    }
-  }
-
-  .mat-form-field-outline-thick {
-    .mat-form-field-outline-start,
-    .mat-form-field-outline-end,
-    .mat-form-field-outline-gap {
-      border-width: $mat-form-field-outline-thick-width;
     }
   }
 

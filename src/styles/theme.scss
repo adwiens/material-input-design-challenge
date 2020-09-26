@@ -1,11 +1,11 @@
-// Styles used by itn-form-field.scss:
+// Style variables also used in form-field.scss:
 $outline-color-opacity: 0.47;
 $outline-color: rgba(black, $outline-color-opacity);
 $hover-color: rgba(black, 0.06);
 
 $typography: mat-typography-config(
-  $font-family: "Lato, sans-serif",
-  $input: mat-typography-level(16px, 1.125, 400)
+  $font-family: "LatoWeb" monospace,
+  $input: mat-typography-level(16px, 1.125, 400),
 );
 
 @include mat-core($typography);
@@ -13,27 +13,27 @@ $typography: mat-typography-config(
 // I used a color-picker on the provided screenshot to get one main color value, and then
 // generated the palettes with this tool (http://mcg.mbitson.com/). Replaced hard-coded
 // contrasts with "$xxx-primary-text".
-$itn-dc-primary: (
-  50: #e9ecff,
-  100: #c8d0ff,
-  200: #a4b1ff,
-  300: #8092ff,
-  400: #647aff,
-  500: #4963ff,
-  600: #425bff,
-  700: #3951ff,
-  800: #3147ff,
-  900: #2135ff,
-  A100: #ffffff,
-  A200: #ffffff,
-  A400: #d0d4ff,
-  A700: #b7bcff,
+$dc-primary: (
+  50: #eae1fa,
+  100: #cbb4f2,
+  200: #a982ea,
+  300: #874fe2,
+  400: #6d2adb,
+  500: #5304d5,
+  600: #4c03d0,
+  700: #4203ca,
+  800: #3902c4,
+  900: #2901ba,
+  A100: #e7e3ff,
+  A200: #bcb0ff,
+  A400: #917dff, // Image showed blue, but video showed purple.
+  A700: #7b63ff, // I used the video's color since it was higher resolution.
   contrast: (
     50: $dark-primary-text,
     100: $dark-primary-text,
     200: $dark-primary-text,
-    300: $dark-primary-text,
-    400: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
     500: $light-primary-text,
     600: $light-primary-text,
     700: $light-primary-text,
@@ -42,12 +42,12 @@ $itn-dc-primary: (
     A100: $dark-primary-text,
     A200: $dark-primary-text,
     A400: $dark-primary-text,
-    A700: $dark-primary-text,
+    A700: $light-primary-text,
   ),
 );
 
 // Assuming the "Update" design has the accent color:
-$itn-dc-accent: (
+$dc-accent: (
   50: #fff6ea,
   100: #ffeacc,
   200: #ffdcaa,
@@ -80,7 +80,7 @@ $itn-dc-accent: (
   ),
 );
 
-$itn-dc-warn: (
+$dc-warn: (
   50: #feeeed,
   100: #fdd5d2,
   200: #fcb9b4,
@@ -113,7 +113,7 @@ $itn-dc-warn: (
   ),
 );
 
-$itn-dc-background: (
+$dc-background: (
   status-bar: map_get($mat-grey, 300),
   app-bar: map_get($mat-grey, 100),
   background: map_get($mat-grey, 50),
@@ -132,7 +132,7 @@ $itn-dc-background: (
   tooltip: map_get($mat-grey, 700),
 );
 
-$itn-dc-foreground: (
+$dc-foreground: (
   base: black,
   // Modified:
   divider: $outline-color,
@@ -157,16 +157,16 @@ $itn-dc-foreground: (
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$itn-dc-theme: (
-  primary: mat-palette($itn-dc-primary),
-  accent: mat-palette($itn-dc-accent, A200, A100, A400),
-  warn: mat-palette($itn-dc-warn),
+$dc-theme: (
+  primary: mat-palette($dc-primary),
+  accent: mat-palette($dc-accent, A200, A100, A400),
+  warn: mat-palette($dc-warn),
   is-dark: false,
-  foreground: $itn-dc-foreground,
-  background: $itn-dc-background,
+  foreground: $dc-foreground,
+  background: $dc-background,
 );
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($itn-dc-theme);
+@include angular-material-theme($dc-theme);
