@@ -37,9 +37,15 @@ mat-form-field.mat-form-field-appearance-outline.mat-form-field-can-float.mat-fo
         // Shrink label whitespace to desired # pixels:
         margin-left: $label-whitespace-x - 5px + 2px; // 5px is Material's value
         margin-right: $label-whitespace-x - 5px - 2px; // Remove extra pixel(s)
-        font-size: 16px;
+        font-size: 16px; // The actual size is smaller due to Material scaling by $mat-font-scale
       }
     }
+  }
+}
+
+mat-form-field.ng-invalid {
+  .mat-form-field-suffix {
+    color: $mat-suffix-warn-color;
   }
 }
 

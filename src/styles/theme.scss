@@ -2,6 +2,7 @@
 $outline-color-opacity: 0.47;
 $outline-color: rgba(black, $outline-color-opacity);
 $hover-color: rgba(black, 0.06);
+$mat-suffix-warn-color: #f87368;
 
 $typography: mat-typography-config(
   $font-family: "LatoWeb" monospace,
@@ -86,7 +87,7 @@ $dc-warn: (
   200: #fcb9b4,
   300: #fa9d95,
   400: #f9887f,
-  500: #f87368,
+  500: $mat-suffix-warn-color,
   600: #f76b60,
   700: #f66055,
   800: #f5564b,
